@@ -91,9 +91,13 @@ body {
 }
 
 /* Hero: cartão da fachada recuado no mobile (foto em cima, mesma margem
-   da página, texto embaixo em fundo sólido). A partir do tablet/desktop
-   volta a ser de ponta a ponta — foto cobrindo a seção inteira atrás do
-   texto, esfumaçado horizontal cobrindo a borda esquerda da foto. */
+   da página, texto embaixo em fundo sólido). A partir do tablet/desktop,
+   a foto fica contida numa faixa à direita (~42%-100% da largura) — não
+   mais esticada pra tela toda — com fundo sólido à esquerda (onde fica
+   o texto) esmaecendo só perto da própria foto. Isso resolve dois
+   problemas de uma vez: contraste do texto (esquerda sempre 100% sólida)
+   e altura (a foto, sendo mais estreita, cabe inteira numa altura bem
+   menor, sem precisar cortar nem rolar a página). */
 .hero-image-col {
   margin: 15px 24px 28px;
 }
@@ -108,15 +112,12 @@ body {
   }
   .hero-image-col {
     position: relative;
-    width: 100%;
-    margin: 0;
+    width: 58%;
+    margin: 0 0 0 auto;
     z-index: 0;
   }
   .hero-bg-wrap {
     border-radius: 0 !important;
-    /* mantém a proporção real da foto (herdada do inline) — mostra a
-       fachada inteira, sem cortar embaixo, em vez de um min-height fixo
-       que estourava só na parte de cima do letreiro */
   }
   .hero-text-wrap {
     position: absolute;
@@ -127,7 +128,7 @@ body {
     padding-bottom: 0;
   }
   .hero-content {
-    max-width: 520px;
+    max-width: 480px;
     margin: 0 !important;
     text-align: left !important;
   }
@@ -139,7 +140,7 @@ body {
     justify-content: flex-start !important;
   }
   .hero-gradient {
-    background: linear-gradient(to right, rgba(249,249,255,1) 0%, rgba(249,249,255,0.92) 22%, rgba(249,249,255,0.4) 38%, rgba(249,249,255,0) 54%) !important;
+    background: linear-gradient(to right, rgba(249,249,255,1) 0%, rgba(249,249,255,0.65) 16%, rgba(249,249,255,0) 34%) !important;
   }
 }
 
