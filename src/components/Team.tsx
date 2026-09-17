@@ -1,22 +1,24 @@
 const doctors = [
   {
     name: 'Dra. Thayna',
-    specialty: 'ODONTOPEDIATRIA',
+    specialty: 'AVALIADORA · CLÍNICO GERAL',
     photo: '/assets/dra-thayna.jpg',
-    icons: ['verified', 'favorite'],
+    icons: ['verified', 'medical_services'],
   },
   {
     name: 'Dr. Werington',
-    specialty: 'IMPLANTODONTIA',
+    specialty: 'CLÍNICO GERAL',
     photo: '/assets/dr-werington.jpg',
-    icons: ['verified', 'precision_manufacturing'],
+    icons: ['verified', 'medical_services'],
   },
   {
     name: 'Dra. Isabela',
-    specialty: 'ORTODONTIA',
+    specialty: 'CLÍNICO GERAL · ENDODONTIA',
     photo: '/assets/dra-isabela.jpg',
-    icons: ['verified', 'architecture'],
+    icons: ['verified', 'healing'],
   },
+  // Dra. Raissa (ORTODONTIA) e Dra. Sarah (HARMONIZAÇÃO OROFACIAL) entram
+  // assim que as fotos chegarem — ver DoctorCard, já suporta photo: null com placeholder.
 ]
 
 export default function Team() {
@@ -77,7 +79,7 @@ function DoctorCard({
 }: {
   name: string
   specialty: string
-  photo: string
+  photo: string | null
   icons: string[]
 }) {
   return (
@@ -104,11 +106,42 @@ function DoctorCard({
           backgroundColor: '#dee8ff',
         }}
       >
-        <img
-          src={photo}
-          alt={name}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
+        {photo ? (
+          <img
+            src={photo}
+            alt={name}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : (
+          <div
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 10,
+              background: 'linear-gradient(160deg, #ede3d0 0%, #dee8ff 100%)',
+              color: '#775a19',
+            }}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: 56, opacity: 0.55 }}>
+              person
+            </span>
+            <span
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                opacity: 0.7,
+              }}
+            >
+              Foto em breve
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Info */}
