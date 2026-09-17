@@ -92,11 +92,15 @@ body {
 
 /* Hero mobile */
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: 460px !important;
+    padding-top: 190px !important;
+  }
   .hero-bg-img {
-    object-position: 70% center;
+    object-position: 38% top;
   }
   .hero-gradient {
-    background: linear-gradient(to top, rgba(249,249,255,0.97) 0%, rgba(249,249,255,0.88) 55%, rgba(249,249,255,0.15) 100%) !important;
+    background: linear-gradient(to top, rgba(249,249,255,0.97) 0%, rgba(249,249,255,0.94) 48%, rgba(249,249,255,0.55) 68%, rgba(249,249,255,0.12) 85%, rgba(249,249,255,0.06) 100%) !important;
   }
   .hero-content {
     max-width: 100% !important;

@@ -5,6 +5,7 @@ const WHATSAPP = 'https://wa.me/5585984010886?text=Ol%C3%A1%2C%20Cl%C3%ADnica%20
 export default function Hero() {
   return (
     <section
+      className="hero-section"
       style={{
         position: 'relative',
         overflow: 'hidden',
