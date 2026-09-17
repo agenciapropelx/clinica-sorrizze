@@ -90,6 +90,13 @@ body {
   }
 }
 
+/* Hero: mantém a logo/letreiro sempre visível, cortando por baixo
+   quando a tela é larga e curta (object-fit:cover corta verticalmente
+   pelo centro por padrão — isso sumia com a logo em monitores largos) */
+.hero-bg-img {
+  object-position: center top;
+}
+
 /* Hero mobile */
 @media (max-width: 768px) {
   .hero-section {
