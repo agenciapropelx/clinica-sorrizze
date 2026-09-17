@@ -104,21 +104,22 @@ body {
   .hero-section {
     display: block !important;
     min-height: 0 !important;
-    padding-top: 76px !important;
+    padding-top: 72px !important;
   }
   .hero-bg-wrap {
     position: relative !important;
     inset: auto !important;
     width: 100%;
-    aspect-ratio: 2148 / 1600;
+    aspect-ratio: 2148 / 1520;
     overflow: hidden;
   }
   .hero-bg-img {
     object-position: center top;
   }
   .hero-gradient {
-    /* só um esfumaçado curto na base da foto, pra dissolver na cor de fundo */
-    background: linear-gradient(to bottom, rgba(249,249,255,0) 78%, rgba(249,249,255,1) 100%) !important;
+    /* esfumaçado bem mais longo pra disfarçar a soleira/sombra da porta
+       (a linha escura no chão da foto) antes de virar fundo sólido */
+    background: linear-gradient(to bottom, rgba(249,249,255,0) 42%, rgba(249,249,255,0.75) 68%, rgba(249,249,255,1) 92%) !important;
   }
   .hero-inner {
     padding: 32px 24px 40px !important;

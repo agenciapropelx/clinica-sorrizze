@@ -25,9 +25,9 @@ const services = [
     desc: 'Reabilitação oral completa para devolver função mastigatória e estética.',
   },
   {
-    icon: 'healing',
-    title: 'Restaurações',
-    desc: 'Tratamentos de cárie e reparos estéticos com resinas de alta qualidade.',
+    icon: 'spa',
+    title: 'HOF',
+    desc: 'Harmonização Orofacial com preenchimentos e toxina botulínica, em equilíbrio com o seu sorriso.',
   },
 ]
 
