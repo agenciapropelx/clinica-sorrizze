@@ -90,8 +90,45 @@ body {
   }
 }
 
-/* Hero: cartão com a fachada — mesmo tratamento em qualquer tamanho de
-   tela (mobile e desktop idênticos), só o container muda de largura. */
+/* Hero: cartão da fachada empilhado em cima no mobile (foto no topo,
+   texto embaixo, fundo sólido). A partir do tablet/desktop vira lado a
+   lado — texto à esquerda, cartão à direita — e o esfumaçado passa a
+   cobrir a borda esquerda da foto (esquerda→direita) em vez da base. */
+.hero-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 16px 0 56px;
+}
+
+@media (min-width: 769px) {
+  .hero-layout {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 56px;
+    padding: 72px 0;
+  }
+  .hero-image-col {
+    flex: 1 1 48%;
+    max-width: 580px;
+  }
+  .hero-content {
+    flex: 1 1 46%;
+    max-width: 520px;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+  .hero-sub {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .hero-ctas {
+    justify-content: flex-start !important;
+  }
+  .hero-gradient {
+    background: linear-gradient(to right, rgba(249,249,255,1) 0%, rgba(249,249,255,0.85) 14%, rgba(249,249,255,0) 34%) !important;
+  }
+}
 
 .luxury-shadow {
   box-shadow: 0 10px 30px -5px rgba(51, 65, 85, 0.08);
