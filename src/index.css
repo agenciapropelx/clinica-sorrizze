@@ -90,30 +90,43 @@ body {
   }
 }
 
-/* Hero: cartão da fachada empilhado em cima no mobile (foto no topo,
-   texto embaixo, fundo sólido). A partir do tablet/desktop vira lado a
-   lado — texto à esquerda, cartão à direita — e o esfumaçado passa a
-   cobrir a borda esquerda da foto (esquerda→direita) em vez da base. */
-.hero-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  padding: 16px 0 56px;
+/* Hero: cartão da fachada recuado no mobile (foto em cima, mesma margem
+   da página, texto embaixo em fundo sólido). A partir do tablet/desktop
+   volta a ser de ponta a ponta — foto cobrindo a seção inteira atrás do
+   texto, esfumaçado horizontal cobrindo a borda esquerda da foto. */
+.hero-image-col {
+  margin: 0 24px 28px;
+}
+
+.hero-text-wrap {
+  padding-bottom: 56px;
 }
 
 @media (min-width: 769px) {
-  .hero-layout {
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 56px;
-    padding: 72px 0;
+  .hero-section {
+    position: relative;
   }
   .hero-image-col {
-    flex: 1 1 48%;
-    max-width: 580px;
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    z-index: 0;
+  }
+  .hero-bg-wrap {
+    position: absolute !important;
+    inset: 0 !important;
+    border-radius: 0 !important;
+    aspect-ratio: auto !important;
+  }
+  .hero-text-wrap {
+    position: relative;
+    z-index: 1;
+    min-height: 760px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 0;
   }
   .hero-content {
-    flex: 1 1 46%;
     max-width: 520px;
     margin: 0 !important;
     text-align: left !important;

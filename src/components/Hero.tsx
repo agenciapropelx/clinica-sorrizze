@@ -5,43 +5,37 @@ const WHATSAPP = 'https://wa.me/5585984010886?text=Ol%C3%A1%2C%20Cl%C3%ADnica%20
 export default function Hero() {
   return (
     <section className="hero-section">
-      <div
-        style={{
-          maxWidth: 1280,
-          margin: '0 auto',
-          padding: '0 24px',
-        }}
-      >
-       <div className="hero-layout">
-        {/* Cartão da fachada — empilhado em cima no mobile, à direita no desktop */}
-        <div className="hero-image-col">
+      {/* Fachada — cartão recuado no mobile (mesma margem da página),
+          de ponta a ponta atrás do texto a partir do desktop */}
+      <div className="hero-image-col">
+        <div
+          className="hero-bg-wrap"
+          style={{
+            position: 'relative',
+            borderRadius: 24,
+            overflow: 'hidden',
+            aspectRatio: '2148 / 1520',
+          }}
+        >
+          <img
+            src="/assets/clinic-facade.jpg"
+            alt="Fachada Clínica Sorrizze"
+            className="hero-bg-img"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          />
           <div
-            className="hero-bg-wrap"
+            className="hero-gradient"
             style={{
-              position: 'relative',
-              borderRadius: 24,
-              overflow: 'hidden',
-              aspectRatio: '2148 / 1520',
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to bottom, rgba(249,249,255,0) 42%, rgba(249,249,255,0.75) 68%, rgba(249,249,255,1) 92%)',
             }}
-          >
-            <img
-              src="/assets/clinic-facade.jpg"
-              alt="Fachada Clínica Sorrizze"
-              className="hero-bg-img"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
-            />
-            <div
-              className="hero-gradient"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(to bottom, rgba(249,249,255,0) 42%, rgba(249,249,255,0.75) 68%, rgba(249,249,255,1) 92%)',
-              }}
-            />
-          </div>
+          />
         </div>
+      </div>
 
-        {/* Texto — abaixo do cartão no mobile, à esquerda no desktop */}
+      {/* Texto — abaixo da foto no mobile, sobreposto à esquerda no desktop */}
+      <div className="hero-text-wrap" style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
         <div className="hero-content" style={{ maxWidth: 620, margin: '28px auto 0', textAlign: 'center' }}>
           {/* Headline */}
           <h1
@@ -151,7 +145,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-       </div>
       </div>
     </section>
   )
