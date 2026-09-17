@@ -9,14 +9,14 @@ export default function Hero() {
       style={{
         position: 'relative',
         overflow: 'hidden',
-        minHeight: 680,
+        minHeight: 760,
         display: 'flex',
         alignItems: 'center',
-        paddingTop: 96,
+        paddingTop: 110,
       }}
     >
       {/* Background */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+      <div className="hero-bg-wrap" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
         <img
           src="/assets/clinic-facade.jpg"
           alt="Fachada Clínica Sorrizze"
@@ -28,12 +28,13 @@ export default function Hero() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(90deg, rgba(249,249,255,0.97) 0%, rgba(249,249,255,0.82) 55%, rgba(249,249,255,0.2) 100%)',
+            background: 'linear-gradient(90deg, rgba(249,249,255,0.98) 0%, rgba(249,249,255,0.95) 38%, rgba(249,249,255,0.55) 52%, rgba(249,249,255,0.15) 75%, rgba(249,249,255,0.08) 100%)',
           }}
         />
       </div>
 
       <div
+        className="hero-inner"
         style={{
           position: 'relative',
           zIndex: 1,

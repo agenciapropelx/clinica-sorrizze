@@ -97,17 +97,32 @@ body {
   object-position: center top;
 }
 
-/* Hero mobile */
+/* Hero mobile — vira duas partes empilhadas em vez de foto atrás do texto:
+   (1) bloco de imagem com proporção travada (mostra a fachada inteira,
+       sem cortar nada dos lados) e (2) texto embaixo, em fundo sólido. */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 460px !important;
-    padding-top: 190px !important;
+    display: block !important;
+    min-height: 0 !important;
+    padding-top: 76px !important;
+  }
+  .hero-bg-wrap {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    aspect-ratio: 2148 / 1600;
+    overflow: hidden;
   }
   .hero-bg-img {
-    object-position: 38% top;
+    object-position: center top;
   }
   .hero-gradient {
-    background: linear-gradient(to top, rgba(249,249,255,0.97) 0%, rgba(249,249,255,0.94) 48%, rgba(249,249,255,0.55) 68%, rgba(249,249,255,0.12) 85%, rgba(249,249,255,0.06) 100%) !important;
+    /* só um esfumaçado curto na base da foto, pra dissolver na cor de fundo */
+    background: linear-gradient(to bottom, rgba(249,249,255,0) 78%, rgba(249,249,255,1) 100%) !important;
+  }
+  .hero-inner {
+    padding: 32px 24px 40px !important;
+    background: #f9f9ff;
   }
   .hero-content {
     max-width: 100% !important;
