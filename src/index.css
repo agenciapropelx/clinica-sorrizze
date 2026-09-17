@@ -95,7 +95,7 @@ body {
    volta a ser de ponta a ponta — foto cobrindo a seção inteira atrás do
    texto, esfumaçado horizontal cobrindo a borda esquerda da foto. */
 .hero-image-col {
-  margin: 0 24px 28px;
+  margin: 15px 24px 28px;
 }
 
 .hero-text-wrap {
@@ -107,21 +107,21 @@ body {
     position: relative;
   }
   .hero-image-col {
-    position: absolute;
-    inset: 0;
+    position: relative;
+    width: 100%;
     margin: 0;
     z-index: 0;
   }
   .hero-bg-wrap {
-    position: absolute !important;
-    inset: 0 !important;
     border-radius: 0 !important;
-    aspect-ratio: auto !important;
+    /* mantém a proporção real da foto (herdada do inline) — mostra a
+       fachada inteira, sem cortar embaixo, em vez de um min-height fixo
+       que estourava só na parte de cima do letreiro */
   }
   .hero-text-wrap {
-    position: relative;
+    position: absolute;
+    inset: 0;
     z-index: 1;
-    min-height: 760px;
     display: flex;
     align-items: center;
     padding-bottom: 0;
@@ -139,7 +139,7 @@ body {
     justify-content: flex-start !important;
   }
   .hero-gradient {
-    background: linear-gradient(to right, rgba(249,249,255,1) 0%, rgba(249,249,255,0.85) 14%, rgba(249,249,255,0) 34%) !important;
+    background: linear-gradient(to right, rgba(249,249,255,1) 0%, rgba(249,249,255,0.92) 22%, rgba(249,249,255,0.4) 38%, rgba(249,249,255,0) 54%) !important;
   }
 }
 
