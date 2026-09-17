@@ -90,55 +90,8 @@ body {
   }
 }
 
-/* Hero: mantém a logo/letreiro sempre visível, cortando por baixo
-   quando a tela é larga e curta (object-fit:cover corta verticalmente
-   pelo centro por padrão — isso sumia com a logo em monitores largos) */
-.hero-bg-img {
-  object-position: center top;
-}
-
-/* Hero mobile — vira duas partes empilhadas em vez de foto atrás do texto:
-   (1) bloco de imagem com proporção travada (mostra a fachada inteira,
-       sem cortar nada dos lados) e (2) texto embaixo, em fundo sólido. */
-@media (max-width: 768px) {
-  .hero-section {
-    display: block !important;
-    min-height: 0 !important;
-    padding-top: 88px !important;
-  }
-  .hero-bg-wrap {
-    position: relative !important;
-    inset: auto !important;
-    width: auto;
-    margin: 0 20px;
-    border-radius: 24px;
-    aspect-ratio: 2148 / 1520;
-    overflow: hidden;
-  }
-  .hero-bg-img {
-    object-position: center top;
-  }
-  .hero-gradient {
-    /* esfumaçado ocupa a base do próprio cartão, dissolvendo a foto
-       direto no fundo da página — sem precisar ir até o topo da tela */
-    background: linear-gradient(to bottom, rgba(249,249,255,0) 42%, rgba(249,249,255,0.75) 68%, rgba(249,249,255,1) 92%) !important;
-  }
-  .hero-inner {
-    padding: 20px 24px 40px !important;
-    background: #f9f9ff;
-  }
-  .hero-content {
-    max-width: 100% !important;
-    text-align: center !important;
-  }
-  .hero-ctas {
-    justify-content: center !important;
-  }
-  .hero-sub {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
+/* Hero: cartão com a fachada — mesmo tratamento em qualquer tamanho de
+   tela (mobile e desktop idênticos), só o container muda de largura. */
 
 .luxury-shadow {
   box-shadow: 0 10px 30px -5px rgba(51, 65, 85, 0.08);

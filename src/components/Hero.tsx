@@ -7,44 +7,44 @@ export default function Hero() {
     <section
       className="hero-section"
       style={{
-        position: 'relative',
-        overflow: 'hidden',
-        minHeight: 760,
-        display: 'flex',
-        alignItems: 'center',
-        paddingTop: 110,
+        paddingTop: 16,
       }}
     >
-      {/* Background */}
-      <div className="hero-bg-wrap" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <img
-          src="/assets/clinic-facade.jpg"
-          alt="Fachada Clínica Sorrizze"
-          className="hero-bg-img"
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
-        <div
-          className="hero-gradient"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(90deg, rgba(249,249,255,0.98) 0%, rgba(249,249,255,0.95) 38%, rgba(249,249,255,0.55) 52%, rgba(249,249,255,0.15) 75%, rgba(249,249,255,0.08) 100%)',
-          }}
-        />
-      </div>
-
       <div
-        className="hero-inner"
         style={{
-          position: 'relative',
-          zIndex: 1,
           maxWidth: 1280,
           margin: '0 auto',
-          padding: '80px 24px',
-          width: '100%',
+          padding: '0 24px',
         }}
       >
-        <div className="hero-content" style={{ maxWidth: 620 }}>
+        {/* Cartão da fachada — mesmo tratamento em mobile e desktop */}
+        <div
+          className="hero-bg-wrap"
+          style={{
+            position: 'relative',
+            borderRadius: 24,
+            overflow: 'hidden',
+            aspectRatio: '2148 / 1520',
+          }}
+        >
+          <img
+            src="/assets/clinic-facade.jpg"
+            alt="Fachada Clínica Sorrizze"
+            className="hero-bg-img"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          />
+          <div
+            className="hero-gradient"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background: 'linear-gradient(to bottom, rgba(249,249,255,0) 42%, rgba(249,249,255,0.75) 68%, rgba(249,249,255,1) 92%)',
+            }}
+          />
+        </div>
+
+        {/* Texto — abaixo do cartão, fundo sólido */}
+        <div className="hero-content" style={{ maxWidth: 620, margin: '28px auto 0', textAlign: 'center' }}>
           {/* Headline */}
           <h1
             style={{
@@ -69,7 +69,7 @@ export default function Hero() {
               fontSize: 18,
               lineHeight: 1.6,
               color: '#4e4639',
-              margin: '0 0 36px',
+              margin: '0 auto 36px',
               maxWidth: 520,
             }}
           >
@@ -78,7 +78,7 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="hero-ctas" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
+          <div className="hero-ctas" style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center', justifyContent: 'center' }}>
             <a
               href={WHATSAPP}
               target="_blank"
@@ -146,7 +146,7 @@ export default function Hero() {
                   />
                 ))}
               </div>
-              <div style={{ lineHeight: 1.3 }}>
+              <div style={{ lineHeight: 1.3, textAlign: 'left' }}>
                 <p style={{ fontWeight: 700, fontSize: 13, color: '#111c2d', margin: 0 }}>4.9/5 Estrelas</p>
                 <p style={{ fontSize: 12, color: '#4e4639', margin: 0 }}>Avaliações Google</p>
               </div>
