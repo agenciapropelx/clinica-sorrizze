@@ -138,6 +138,16 @@ export default function Footer() {
         }}
       >
         © 2026 Sorrizze Clínica Odontológica. Todos os direitos reservados.
+        <br />
+        Desenvolvido por{' '}
+        <a
+          href="https://agenciapropelx.com.br"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: '#7f7667', textDecoration: 'underline', textUnderlineOffset: 2 }}
+        >
+          Agência Propel X
+        </a>
       </div>
     </footer>
   )
